@@ -1,0 +1,45 @@
+<header class="container header">
+  <!-- ==== NAVBAR ==== -->
+  <nav class="nav">
+    <div class="logo">
+      <h2>ToDoList.</h2>
+    </div>
+
+    <div class="nav_menu" id="nav_menu">
+      <button class="close_btn" id="close_btn">
+        <i class="ri-close-fill"></i>
+      </button>
+
+      <ul class="nav_menu_list">
+        {% if user.is_authenticated %}
+        <li class="nav_menu_item">
+          <a href="{% url 'todo' %}" class="nav_menu_link"><i class="fa fa-list" aria-hidden="true"> Task List</i></a>
+        </li>
+        <li class="nav_menu_item">
+          <a href="{% url 'add_task' %}" class="nav_menu_link"><i class="fa fa-plus" aria-hidden="true"> Add Task</i></a>
+        </li>
+        <li class="nav_menu_item">
+          <a href="{% url 'profile' %}" class="nav_menu_link"><i class="fa fa-user" aria-hidden="true"> Profile</i></a>
+        </li>
+        <li class="nav_menu_item">
+          <a href="{% url 'userlogout' %}" class="nav_menu_link"><i class="fa fa-sign-out" aria-hidden="true"> Logout</i></a>
+        </li>
+        {% else %}
+        <li class="nav_menu_item">
+          <a href="{% url 'home' %}" class="nav_menu_link"><i class="fa fa-home" aria-hidden="true"> Home</i></a>
+        </li>
+        <li class="nav_menu_item">
+          <a href="#adout" class="nav_menu_link">About</a>
+        </li>
+        <li class="nav_menu_item">
+          <a href="#footer" class="nav_menu_link"><i class="fa fa-address-book" aria-hidden="true"> Contact</i></a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <button class="toggle_btn" id="toggle_btn">
+      <i class="ri-menu-line"></i>
+    </button>
+  </nav>
+</header>

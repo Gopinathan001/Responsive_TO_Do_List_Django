@@ -1,0 +1,38 @@
+{% extends "indexlogin.html" %} 
+{% block title %} 
+Add Your Task
+{% endblock %} 
+
+{% block content %}
+<section class="wrapper">
+  <div class="container">
+    <div class="grid-cols-2">
+      <div class="grid-item-1">
+        <form method="POST" class="sign-in-form">
+          {% csrf_token %}
+          <h2 class="title">To Do List</h2>
+          <div class="input-field-tile">
+            <input type="text" name="title" placeholder="Enter The Title" required autofocus>
+          </div>
+          <div class="input-field-des">
+            <textarea name="description" placeholder="Enter The Description" required autofocus ></textarea>
+          </div>
+          <div>
+            <label for="completed">Completed : </label>
+            <input type="checkbox" name="completed" id="completed">
+          </div>
+          <input type="submit" value="Add" class="btn_log solid" />
+        </form>
+      </div>
+      <div class="grid-item-2">
+        <div class="team_img_wrapper">
+          <img src="../static/img/team_checklist.jpg" alt="team-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+

@@ -1,0 +1,38 @@
+{% extends "indexlogin.html" %} 
+{% block title %} 
+Update Task
+{% endblock %} 
+
+{% block content %}
+<section class="wrapper">
+  <div class="container">
+    <div class="grid-cols-2">
+      <div class="grid-item-2">
+        <div class="team_img_wrapper">
+          {% load static %}
+          <img src="{% static 'img/editing.png' %}" alt="Updating-img" />
+        </div>
+      </div>
+
+      <div class="grid-item-1">
+        <form method="POST" class="sign-in-form">
+          {% csrf_token %}
+          <h2 class="title">Edit To Do List</h2>
+          <div class="input-field-tile">
+            <input type="text" name="title" value="{{ edit_tsk.title }}" required autofocus>
+          </div>
+          <div class="input-field-des">
+            <textarea name="description" required autofocus >{{ edit_tsk.description }}</textarea>
+          </div>
+          
+          <div>
+            <label for="completed">Completed : </label>
+            <input type="checkbox" name="completed" id="completed" {% if edit_tsk.completed %} checked {% endif %}>
+          </div>
+          <input type="submit" value="Save Changes" class="btn_log solid" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

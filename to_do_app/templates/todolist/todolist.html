@@ -1,0 +1,77 @@
+{% extends "indexlogin.html" %}
+{% block title %}
+Task List
+{% endblock %}
+
+{% block content %}
+<div class="tbl">
+    <main class="table" id="customers_table">
+        {% csrf_token %}
+        <section class="table__header">
+            <h1>Welcome {{request.user}}</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="../static/img/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <a href="{% url 'add_task' %}"><div class="add_list-btn"></div></a>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id </th>
+                        <th> Title </th>
+                        <th> Description </th>
+                        <th> Completed </th>
+                        <th> Edit </th>
+                        <th> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in view_todo %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        {% if task.completed %}
+                        <td class="size-des"><s>{{ task.title }}</s></td>   
+                        <td class="size-des"><s>{{ task.description }}</s></td>   
+                        {% else %}
+                        <td class="size-des">{{ task.title }}</td>   
+                        <td class="size-des">{{ task.description }}</td> 
+                        {% endif %}
+
+                        {% if task.completed %}
+                        <td><a href="{% url 'complete_task' task.id %}"><div class="task-complete-icon"></div></a></td>
+                        {% else %}
+                        <td><a href="{% url 'complete_task' task.id %}"><div class="task-incomplete-icon"></div></a></td>
+                        {% endif %}
+                        <td><a href="{% url 'edit_task' task.id %}"><i class="fa fa-edit todo-edit" aria-hidden="true"></i></a></td>
+                        <td><a href="{% url 'delete_task' task.id %}" ><i class="fa fa-trash todo-trash" aria-hidden="true"></i></a></td>
+                    </tr> 
+                    {% empty %}
+                    <h1 style="padding: 10px; font-size: 1.4rem;">No new tasks are created.</h1>
+                    <h1 style="padding: 0 10px 10 ; font-size: 1.1rem; ">Create a <a href="{% url 'add_task' %}">New task!</a></h1>
+                {% endfor %}  
+                </tbody>            
+            </table>
+        </section>
+        <section class="table__header">
+            <h1>You have <i>{{incomplete_count}}</i> incomplete task</h1>
+            
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="../static/img/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="../static/img/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="../static/img/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="../static/img/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}

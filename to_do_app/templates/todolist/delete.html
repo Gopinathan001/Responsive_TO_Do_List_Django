@@ -1,0 +1,38 @@
+{% extends "indexlogin.html" %} 
+{% block title %} 
+Deleting Task
+{% endblock %} 
+
+{% block content %}
+<section class="wrapper">
+    <div class="container">
+      <div class="grid-cols-2">
+        
+        <div class="grid-item-1">
+            <form method="POST" class="delets">
+                {% csrf_token %}
+                <h1 class="main-heading del-h1">Permission For Deletion?</h1>
+                <p class="info-text" id="del-title"><b>Title : </b>{{ delete_tsk.title }}</p>
+
+                <p class="info-text"><b>Description : </b>{{ delete_tsk.description }}</p>
+  
+                <div class="btn_wrapper del-trash">
+                    <button><i class="fa fa-trash todo-trash" aria-hidden="true"></i></i></button>
+                </div>
+            </form>
+        </div>
+        
+
+        <div class="grid-item-2">
+            <div class="team_img_wrapper">
+              {% load static %}
+            <img src="{% static 'img/Inbox cleanup-rafiki.png' %}" alt="Updating-img" />
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+

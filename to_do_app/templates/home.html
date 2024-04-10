@@ -1,0 +1,183 @@
+{% extends "index.html" %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<section class="wrapper">
+    <div class="container">
+      <div class="grid-cols-2">
+        <div class="grid-item-1">
+          <h1 class="main-heading">
+            Welcome to <span>ToDoList.</span>
+            <br/>
+            Develop anything.
+          </h1>
+          <p class="info-text">
+            Build a beautiful, modern website with flexible components built
+            from scratch.
+          </p>
+
+          <div class="btn_wrapper">
+            <a href="{% url 'userlogin' %}"><button class="btn view_more_btn"><i class="fa fa-sign-in" aria-hidden="true"> Login</i>
+            </button></a>
+
+            <!-- <a href="{% url 'register' %}"><button class="btn documentation_btn">Register</button></a> -->
+          </div>
+        </div>
+        <div class="grid-item-2">
+          <div class="team_img_wrapper">
+            <img src="../static/img/team_checklist.jpg" alt="team-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="wrapper" id="adout">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="grid-cols-3">
+        <div class="grid-col-item">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <div class="featured_info">
+            <span>Built for developers </span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+              ratione facilis animi voluptas exercitationem molestiae.
+            </p>
+          </div>
+        </div>
+        <div class="grid-col-item">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <div class="featured_info">
+            <span>Designed to be modern</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+              ipsum esse corrupti. Quo, labore debitis!
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-col-item">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              />
+            </svg>
+          </div>
+          <div class="featured_info">
+            <span>Documentation for everything</span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+              nostrum voluptate totam ipsa corrupti vero!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer">
+      <div class="fo-address fo">
+        <div class="fo-add-head">
+          <h3>ToDO List</h3>
+        </div>
+        <div class="fo-add-content-todo">
+          <ul>
+            <li class="nav_menu_item-to">
+              <a href="{% url 'home' %}" class="nav_menu_link-to">Home</a>
+            </li>
+            <li class="nav_menu_item-to">
+              <a href="#adout" class="nav_menu_link-to">About</a>
+            </li>
+            <li class="nav_menu_item-to">
+              <a href="#footer" class="nav_menu_link-to">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <div class="fo-address fo">
+          <div class="fo-add-head">
+            <h3>OFFICE ADDRESS</h3>
+          </div>
+          <div class="fo-add-content">
+            <a href="https://www.google.com/maps/place/14,+Seetharam+Rd,+Shevapet,+Salem,+Tamil+Nadu+636009/@11.6578133,78.1482076,17z/data=!3m1!4b1!4m5!3m4!1s0x3babf033dc5db72f:0xc3f426ad796a9ca7!8m2!3d11.6578133!4d78.1507825?entry=ttu">
+              <p>14, Seetharaman Road,</p>
+              <p>Arisipalayam,</p>
+              <p>Salem - 636 009</p>
+            </a>
+          </div>
+        </div>
+        <div class="fo-follow-us fo">
+          <div class="fo-fol-head">
+            <h3>FOLLOW US</h3>
+          </div>
+          <div class="fo-fol-content">
+            <div class="fo-row-1">
+              
+              <a target="blank" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+              <a target="blank" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+              <a target="blank" href="https://workspace.google.com/intl/en_in/"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+            <!-- <div class="fo-row-2">
+              <a target="blank" href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a target="blank" href="https://workspace.google.com/intl/en_in/"><i class="fab fa-google-plus-g"></i></a>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="fo-contact-us fo">
+          <div class="fo-con-head">
+            <h3>CONTACT US</h3>
+          </div>
+          <div class="fo-con-content">
+            <div class="fo-phone">
+              <a href="#" class="fo-p">+91 90035 16731</a>
+            </div>
+            
+            <div class="fo-mail">
+              <a href="#" class="fo-p">gopi852000@gmail</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </footer>
+{% endblock %}
